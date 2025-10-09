@@ -97,9 +97,5 @@
 </template>
 
 <style scoped>
-  /* Add your styles here */
-  .done{
-    text-decoration: line-through;
-    color: gray;
-  }
+  
 </style>
