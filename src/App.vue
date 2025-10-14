@@ -72,7 +72,7 @@
 
       alert_.append(message);
 
-      // setTimeout(() => message.remove(), 5000)
+      setTimeout(() => message.remove(), 5000)
   }
 
   const rm_live_message = () => {
