@@ -8,11 +8,11 @@ const props = defineProps([
 </script>
 
 <template>
-    <ul class="list-group mt-4">
+    <ul class=" list-group mt-4">
         <li class="list-group-item" v-for="(tasks, index) in props.getTasksFiltered">
-            <input @change="e => tasks.completed = e.target.checked" :checked="tasks.completed" :id="tasks.title" type="checkbox">
+            <input  class="form-check-input" @change="e => tasks.completed = e.target.checked" :checked="tasks.completed" :id="tasks.title" type="checkbox">
             <!-- <label :class="{ done: tasks.completed === !false}" class="ms-3" :for="tasks.title">{{ index + 1 }} : {{ tasks.title }}</label> -->
-            <label :class="{ done: tasks.completed }" class="ms-3" :for="tasks.title">
+            <label :class="{ done: tasks.completed }" :for="tasks.title" class="form-check-label ms-3" >
                 {{ index + 1 }} : {{ tasks.title
             }}
             </label>

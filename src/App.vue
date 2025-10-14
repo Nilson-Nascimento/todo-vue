@@ -61,6 +61,29 @@
     }
   }
 
+  // alert message liveral
+  const live_message = (msg) => {
+    const alert_ = document.getElementById('div_Alert_');
+    const message = document.createElement('div');
+       message.innerHTML = [
+        `<div class="alert alert-danger" role="alert" id="alert_">${msg}`,
+      '</div>'
+      ].join('');
+
+      alert_.append(message);
+
+      // setTimeout(() => message.remove(), 5000)
+  }
+
+  const rm_live_message = () => {
+    const alert_ = document.getElementById('alert_');
+    console.log(alert_);
+    
+    if(alert_){
+      alert_.remove();
+    }
+  }
+
   // Add new task
   const addTask = ( ) => {
     if(state.newTask.length >= 3) {
@@ -70,14 +93,19 @@
     };
     state.tasks.push(addNewTask);
     state.newTask = '';
+
+    rm_live_message();
+
     }else{
-      alert('A tarefa deve ter no mínimo 3 caracteres.')
+      // alert('A tarefa deve ter no mínimo 3 caracteres.')
+      
+      live_message('A tarefa deve ter no mínimo 300 caracteres.')
     }
   }
+
   const allTasks = () => {
     return state.tasks.length;
   }
-
 
 </script>
 
@@ -92,7 +120,6 @@
     <TaskList :get-tasks-filtered="getTasksFiltered()" />
 
   </div>
-  
   
 </template>
 

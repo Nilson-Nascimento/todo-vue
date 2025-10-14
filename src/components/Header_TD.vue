@@ -25,6 +25,8 @@
       <h1>Minhas Tarefas</h1>
       <p>Você tem {{ props.getTasksPending }} de  {{props.allTasks() }} tarefas pendentes</p>
     </header> 
+
+
 </template>
 
 <style setup>
